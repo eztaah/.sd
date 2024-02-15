@@ -1,0 +1,27 @@
+
+TITLE :
+
+
+# comment
+
+
+$ git add .
+
+
+-- main.py
+print("hello")
+print("bye")
+--
+
+
+Hello everybody
+
+
+"""
+comment
+on
+multiple
+lines
+"""
+
+

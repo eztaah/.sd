@@ -1,0 +1,88 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "sd",
+	"patterns": [
+		{
+            "include": "#title"
+        },
+		{
+			"include": "#comment"
+		},
+		{
+            "include": "#codeblock"
+        },
+		{
+			"include": "#bold"
+		}
+	],
+	"repository": {
+
+        "title": {
+            "patterns": [
+                {
+                    "name": "storage.type.js title.sd",
+                    "match": "^.*:\\s*$"
+                }
+            ]
+        },
+
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.js comment.sd",
+                    "match": "#.*$"
+                }, 
+				{
+					"name": "comment.line.double-slash.js comment.sd",
+					"begin": "\"\"\"",
+					"end": "\"\"\"",
+					"patterns": [
+						{
+							"name": "comment.line.double-slash.js comment.sd",
+							"match": ".|\\s"
+						}
+					]
+				}
+            ]
+        },
+
+        "codeblock": {
+            "patterns": [
+                {
+                    "begin": "--\\s+(.*)",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.quoted.double.js codeblock-border.sd"
+                        },
+                        "1": {
+                            "name": "string.quoted.double.js codeblock-border.sd"
+                        }
+                    },
+                    "end": "--",
+                    "endCaptures": {
+                        "0": {
+                            "name": "string.quoted.double.js codeblock-border.sd"
+                        }
+                    },
+                    "contentName": "string.quoted.double.js codeblock-content.sd",
+                    "patterns": [
+                        {
+                            "match": ".+",
+                            "name": "string.quoted.double.js codeblock-content.sd"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        "bold": {
+            "patterns": [
+                {
+                    "name": "bold.sd",
+                    "match": "\\$(?=\\s)"
+                }
+            ]
+        }
+	},
+	"scopeName": "source.sd"
+}
