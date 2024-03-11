@@ -1,8 +1,11 @@
 Change Log
 
 
-v1.1.0
-    - change vscode required version
+v1.2.0       
+    - fix regex    
 
-v1.0.0  
-    - Initial release
+v1.1.0     
+    - change vscode required version    
+
+v1.0.0          
+    - Initial release     

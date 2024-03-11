@@ -49,7 +49,7 @@
         "codeblock": {
             "patterns": [
                 {
-                    "begin": "--\\s+(.*)",
+                    "begin": "^--\\s+([^\\s\n]+)",
                     "beginCaptures": {
                         "0": {
                             "name": "string.quoted.double.js codeblock-border.sd"
@@ -58,7 +58,7 @@
                             "name": "string.quoted.double.js codeblock-border.sd"
                         }
                     },
-                    "end": "--",
+                    "end": "^--",
                     "endCaptures": {
                         "0": {
                             "name": "string.quoted.double.js codeblock-border.sd"
